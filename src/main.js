@@ -11,13 +11,18 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-
+    numValue: 100000000
   },
   getters: {
 
   },
   mutations: {
-
+    increment(state) {
+      state.numValue += 1;
+    },
+    decrement(state) {
+      state.numValue -= 1;
+    }
   },
   actions: {
 

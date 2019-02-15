@@ -1,13 +1,18 @@
 <template>
   <div id="app">
+    <h1>{{numValue}}</h1>
     <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
-  name: 'App'
+  name: 'App',
+  computed: {
+    ...mapState(['numValue'])
+  },
 }
 </script>
 
