@@ -11,7 +11,11 @@ import {mapState} from 'vuex'
 export default {
   name: 'App',
   computed: {
-    ...mapState(['numValue'])
+    ...mapState({
+      numValue: state => {
+        return state.appInfo.numValue
+      }
+    })
   },
 }
 </script>

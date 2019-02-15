@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 export default {
   name: 'HelloWorld',
   data () {
@@ -14,11 +15,14 @@ export default {
     }
   },
   methods: {
-    increase(){
-      this.$store.commit('increment')
+    ...mapActions(['add','decre']),
+    async increase(){
+      // this.$store.commit('increment')
+      await this.add({id: 12345})
     },
     decrease(){
-      this.$store.commit('decrement')
+      // this.$store.commit('decrement')
+      this.decre()
     }
   },
 }
